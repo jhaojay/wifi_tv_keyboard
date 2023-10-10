@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Logger</title>
+</head>
+<body>
+
+<input type="text" id="inputBox" placeholder="Type something...">
+
+<script>
+    const inputBox = document.getElementById("inputBox");
+
+    inputBox.addEventListener("keydown", function(event) {
+        const key = event.key;
+
+        // Check if the key is a single character or 'Backspace'
+        if (key.length === 1 || key === 'Backspace') {
+            console.log(key);
+            fetch("/send_char", {
+                method: "POST",
+                body: key,
+                headers: {
+                    "Content-Type": "text/plain"
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
+
