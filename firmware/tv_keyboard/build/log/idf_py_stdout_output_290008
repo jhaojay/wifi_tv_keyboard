@@ -1,0 +1,147 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x16e8
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2eb0
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2023 00:13:45[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v0.1[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=2712ch (160044) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00037154 vaddr=3fc96f00 size=044d4h ( 17620) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0003b630 vaddr=40374000 size=049e8h ( 18920) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=98d8ch (626060) map[0m
+[0;32mI (255) esp_image: segment 4: paddr=000d8db4 vaddr=403789e8 size=0e4f4h ( 58612) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (287) boot: Disabling RNG early entropy source...[0m
+[0;32mI (293) cpu_start: Multicore app[0m
+[0;32mI (293) cpu_start: Pro cpu up.[0m
+[0;32mI (293) cpu_start: Starting app cpu, entry point is 0x40375480[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) cpu_start: Application information:[0m
+[0;32mI (315) cpu_start: Project name:     tv_keyboard[0m
+[0;32mI (320) cpu_start: App version:      1[0m
+[0;32mI (324) cpu_start: Compile time:     Oct 13 2023 00:20:29[0m
+[0;32mI (330) cpu_start: ELF file SHA256:  82d4d29b6b2e5963...[0m
+[0;32mI (336) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (342) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (346) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (351) cpu_start: Chip rev:         v0.1[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9F720 len 00049FF0 (295 KiB): DRAM[0m
+[0;32mI (369) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (376) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (382) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: winbond[0m
+[0;32mI (393) spi_flash: flash io: dio[0m
+[0;33mW (397) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (411) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (417) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (425) app_start: Starting scheduler on CPU0[0m
+[0;32mI (429) app_start: Starting scheduler on CPU1[0m
+[0;32mI (429) main_task: Started on CPU0[0m
+[0;32mI (439) main_task: Calling app_main()[0m
+[0;32mI (469) pp: pp rom version: e7ae62f[0m
+[0;32mI (469) net80211: net80211 rom version: e7ae62f[0m
+I (479) wifi:wifi driver task: 3fca9868, prio:23, stack:6656, core=0
+I (489) wifi:wifi firmware version: ce9244d
+I (489) wifi:wifi certification version: v7.0
+I (489) wifi:config NVS flash: enabled
+I (489) wifi:config nano formating: disabled
+I (489) wifi:Init data frame dynamic rx buffer num: 32
+I (499) wifi:Init management frame dynamic rx buffer num: 32
+I (499) wifi:Init management short buffer num: 32
+I (509) wifi:Init dynamic tx buffer num: 32
+I (509) wifi:Init static tx FG buffer num: 2
+I (519) wifi:Init static rx buffer size: 1600
+I (519) wifi:Init static rx buffer num: 10
+I (519) wifi:Init dynamic rx buffer num: 32
+[0;32mI (529) wifi_init: rx ba win: 6[0m
+[0;32mI (529) wifi_init: tcpip mbox: 32[0m
+[0;32mI (539) wifi_init: udp mbox: 6[0m
+[0;32mI (539) wifi_init: tcp mbox: 6[0m
+[0;32mI (539) wifi_init: tcp tx win: 5744[0m
+[0;32mI (549) wifi_init: tcp rx win: 5744[0m
+[0;32mI (549) wifi_init: tcp mss: 1440[0m
+[0;32mI (549) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (559) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (569) phy_init: phy_version 601,98f2a71,Jun 29 2023,09:58:12[0m
+I (609) wifi:mode : sta (f4:12:fa:ce:c7:54)
+I (609) wifi:enable tsf
+[0;32mI (609) WIFI_APP: wifi_init_sta finished.[0m
+[0;32mI (609) WIFI_APP: event_base=WIFI_EVENT, event_id=2[0m
+I (629) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (629) wifi:state: init -> auth (b0)
+I (639) wifi:state: auth -> assoc (0)
+I (649) wifi:state: assoc -> run (10)
+I (769) wifi:connected with 4250f5, aid = 22, channel 1, BW20, bssid = 58:fc:20:2d:44:13
+I (769) wifi:security: WPA2-PSK, phy: bgn, rssi: -35
+I (769) wifi:pm start, type: 1
+
+I (769) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (779) WIFI_APP: event_base=WIFI_EVENT, event_id=4[0m
+I (789) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (799) wifi:<ba-add>idx:0 (ifx:0, 58:fc:20:2d:44:13), tid:6, ssn:1, winSize:64
+[0;32mI (1779) esp_netif_handlers: sta ip: 192.168.1.191, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1779) WIFI_APP: event_base=IP_EVENT, event_id=0[0m
+[0;32mI (1779) WIFI_APP: got ip:192.168.1.191[0m
+[0;32mI (5619) MQTT_EXAMPLE: Other event id:7[0m
+[0;32mI (5619) HID APP: USB initialization[0m
+[0;33mW (5619) TinyUSB: The device's device descriptor is not provided by user, using default.[0m
+[0;32mI (5619) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (5789) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (5799) HID APP: USB initialization DONE[0m
+[0;32mI (5799) main_task: Returned from app_main()[0m
+I (6119) wifi:<ba-add>idx:1 (ifx:0, 58:fc:20:2d:44:13), tid:0, ssn:1, winSize:64
+[0;32mI (6489) MQTT_EXAMPLE: MQTT_EVENT_CONNECTED[0m
+[0;32mI (6489) MQTT_EXAMPLE: sent subscribe successful, msg_id=6715[0m
+[0;32mI (6499) MQTT_EXAMPLE: MQTT_EVENT_SUBSCRIBED, msg_id=6715[0m
+[0;32mI (9909) MQTT_EXAMPLE: MQTT_EVENT_DATA[0m
+[0;32mI (9909) MQTT_EXAMPLE: Received message: blink[0m
+[0;32mI (11909) MQTT_EXAMPLE: Received message: blinkP�?[0m
+[0;32mI (11959) MQTT_EXAMPLE: MQTT_EVENT_DATA[0m
+[0;32mI (11959) MQTT_EXAMPLE: Received message: AlinkP�?[0m
+[0;32mI (63199) MQTT_EXAMPLE: MQTT_EVENT_DATA[0m
+[0;32mI (63199) MQTT_EXAMPLE: Received message: BlinkP�?[0m

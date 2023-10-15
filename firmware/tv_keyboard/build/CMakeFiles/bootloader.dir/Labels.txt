@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/phi/tv_keyboard/build/CMakeFiles/bootloader
+/home/phi/tv_keyboard/build/CMakeFiles/bootloader.rule
+/home/phi/tv_keyboard/build/CMakeFiles/bootloader-complete.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/phi/tv_keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
