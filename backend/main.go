@@ -1,49 +1,42 @@
 package main
 
 import (
-	"fmt"
-	"log"
 	"net/http"
-	"strings"
-	"io/ioutil"
+	"os/exec"
+	"log"
+	"encoding/json"
 )
 
-func main() {
-	http.Handle("/", http.FileServer(http.Dir("./")))
-	http.HandleFunc("/send_char", handleChar)
-
-	log.Println("Server running on port: 8080")
-	http.ListenAndServe(":8080", nil)
+type Command struct {
+	Command string `json:"command"`
 }
 
-
-func handleChar(w http.ResponseWriter, r *http.Request) {
-    log.Println("Received a request on /send_char")  // <-- Add this log
-
-    if r.Method == http.MethodPost {
-		defer r.Body.Close()
-
-		bodyBytes, err := ioutil.ReadAll(r.Body)
+func sendCommandHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		var cmdData Command
+		err := json.NewDecoder(r.Body).Decode(&cmdData)
 		if err != nil {
-			log.Println("Error reading the body:", err)  // <-- Modify this to print error immediately
-			http.Error(w, "Error reading request", http.StatusInternalServerError)
+			http.Error(w, "Invalid request", http.StatusBadRequest)
 			return
 		}
-		key := string(bodyBytes)
-		key = strings.TrimSpace(key)
-		
-		log.Println("Parsed key:", key)  // <-- Log the parsed key
 
-		sendChar(key)
-		w.Write([]byte("OK"))
-	} else {
-	    log.Println("Received non-POST request on /send_char")  // <-- Add this log for clarity
+		cmd := exec.Command("mosquitto_pub", "-h", "localhost", "-t", "esp32s3", "-m", cmdData.Command)
+		err = cmd.Run()
+		if err != nil {
+			log.Printf("Failed to execute command: %v", err)
+			http.Error(w, "Failed to execute command", http.StatusInternalServerError)
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
 	}
 }
 
+func main() {
+	http.Handle("/", http.FileServer(http.Dir("../frontend/")))
+	http.HandleFunc("/send-command", sendCommandHandler)
 
-func sendChar(key string) {
-	// This is where you handle the received character
-	fmt.Println("Received char:", key)
+	log.Println("Server started at :8080")
+	http.ListenAndServe(":8080", nil)
 }
 

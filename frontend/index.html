@@ -18,12 +18,12 @@
         // Check if the key is a single character or 'Backspace'
         if (key.length === 1 || key === 'Backspace') {
             console.log(key);
-            fetch("/send_char", {
-                method: "POST",
-                body: key,
+            fetch('/send-command', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "text/plain"
-                }
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: key })
             });
         }
     });
@@ -31,4 +31,3 @@
 
 </body>
 </html>
-
