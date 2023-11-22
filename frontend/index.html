@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Logger</title>
+    <title>WiFi TV Keyboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #inputBox {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
+<header>WiFi TV Keyboard</header>
 <input type="text" id="inputBox" placeholder="Type something...">
 
 <script>
-    const inputBox = document.getElementById("inputBox");
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputBox = document.getElementById("inputBox");
 
-    inputBox.addEventListener("keydown", function(event) {
-        const key = event.key;
+        inputBox.addEventListener("keydown", function(event) {
+            const key = event.key;
 
-        // Check if the key is a single character or 'Backspace'
-        if (key.length === 1 || key === 'Backspace') {
-            console.log(key);
-            fetch('/send-command', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ command: key })
-            });
-        }
+            if (key.length === 1 || key === 'Backspace' || key === 'Enter') {
+                console.log(key);
+                fetch('/send-command', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ command: key })
+                });
+            }
+        });
     });
 </script>
 
 </body>
 </html>
+
