@@ -12,14 +12,14 @@
 #include "class/hid/hid_device.h"
 
 
-#define WIFI_SSID   ""
-#define WIFI_PASS   ""
+#define WIFI_SSID   "4250f5"
+#define WIFI_PASS   "5846-lime-39"
 #define EXAMPLE_ESP_MAXIMUM_RETRY  10
 
 
 #define LED_PIN GPIO_NUM_8
 
-#define MQTT_SERVER "mqtt://192.168.1.201"
+#define MQTT_SERVER "mqtt://192.168.1.217"
 
 #define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN)
 
@@ -94,6 +94,8 @@ static void app_send_hid_demo(const char *key)
     const char alp_key = key[0];
     if (strncmp(key, " ", strlen(" ")) == 0) {
         keycode[0] = HID_KEY_SPACE;
+    } else if (strncmp(key, "Enter", strlen("Enter")) == 0) {
+        keycode[0] = HID_KEY_ENTER;
     } else if (strncmp(key, "Backspace", strlen("Backspace")) == 0) {
         keycode[0] = HID_KEY_BACKSPACE;
     } else if ('a' <= alp_key && alp_key <= 'z') {
