@@ -12,8 +12,8 @@
 #include "class/hid/hid_device.h"
 
 
-#define WIFI_SSID   "4250f5"
-#define WIFI_PASS   "5846-lime-39"
+#define WIFI_SSID   ""
+#define WIFI_PASS   ""
 #define EXAMPLE_ESP_MAXIMUM_RETRY  10
 
 
