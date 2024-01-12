@@ -20,7 +20,7 @@ func sendCommandHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		cmd := exec.Command("mosquitto_pub", "-h", "localhost", "-t", "esp32s3", "-m", cmdData.Command)
+		cmd := exec.Command("mosquitto_pub", "-h", "localhost", "-t", "tv_keyboard", "-m", cmdData.Command)
 		err = cmd.Run()
 		if err != nil {
 			log.Printf("Failed to execute command: %v", err)
